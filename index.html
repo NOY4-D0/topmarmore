@@ -15,30 +15,26 @@ body{font-family:'Lato',sans-serif;background:#f4f2f0;color:#1a1a1a}
   --bg:#f4f2f0;--bg2:#eceae7;--bg3:#e2deda;
   --border:#ccc8c4;--white:#fff
 }
-
-/* NAV */
 nav{background:var(--dark2);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;position:sticky;top:0;z-index:200;border-bottom:2px solid var(--red)}
 .nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer}
-.nav-logo-img{width:44px;height:44px;background:var(--dark);border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--red)}
 .nav-logo-text{font-family:'Cinzel',serif;font-size:15px;letter-spacing:3px;text-transform:uppercase;color:#fff}
 .nav-logo-text span{color:var(--red)}
 .nav-links{display:flex;gap:1.5rem;list-style:none}
 .nav-links a{color:#aaa;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'Lato',sans-serif;transition:color .2s}
 .nav-links a:hover{color:var(--red)}
-
-/* PAGES */
 .page{display:none}.page.active{display:block}
-
-/* HERO */
-.hero{min-height:480px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem 2rem;position:relative;overflow:hidden;
-  background:linear-gradient(160deg,#1a1a1a 0%,#2e2e2e 40%,#1a1a1a 70%,#111 100%)}
-.hero-stone{position:absolute;inset:0;opacity:.12;
-background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")  
+.hero{min-height:480px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem 2rem 4rem;position:relative;overflow:hidden;background:linear-gradient(160deg,#1a1a1a 0%,#2e2e2e 40%,#1a1a1a 70%,#111 100%)}
 .hero-lines{position:absolute;inset:0;background:repeating-linear-gradient(105deg,transparent,transparent 60px,rgba(192,32,26,.06) 60px,rgba(192,32,26,.06) 61px)}
+.hero-slides{width:100%;position:relative}
+.hslide{display:none;flex-direction:column;align-items:center;animation:fadeIn .6s ease}
+.hslide.active{display:flex}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.slide-dots{display:flex;gap:8px;justify-content:center;margin-top:2rem;position:relative}
+.dot{width:8px;height:8px;border-radius:50%;background:#444;cursor:pointer;transition:background .2s}
+.dot.active{background:var(--red)}
 .hero-badge{font-family:'Lato',sans-serif;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--red);position:relative;margin-bottom:1.2rem}
 .hero-logo-big{position:relative;margin-bottom:.5rem}
 .hero-logo-big .top-word{font-family:'Cinzel',serif;font-size:64px;font-weight:700;color:#fff;letter-spacing:8px;line-height:1;display:block}
-.hero-logo-big .top-word .o-red{color:var(--red)}
 .hero-logo-big .sub-word{font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:#bbb;letter-spacing:4px;display:block;margin-top:-.3rem}
 .hero-divider{display:flex;align-items:center;gap:14px;margin:1.2rem 0;position:relative}
 .hero-divider-line{flex:1;max-width:80px;height:1px;background:var(--red);opacity:.5}
@@ -48,64 +44,30 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 .btn-red:hover{background:var(--red-dark)}
 .btn-outline{background:transparent;color:#fff;border:1px solid #555;padding:12px 38px;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'Lato',sans-serif;margin-left:1rem;transition:all .2s}
 .btn-outline:hover{border-color:var(--red);color:var(--red)}
-
-/* SECTION COMMON */
 section{padding:4rem 2rem}
 .sec-head{text-align:center;margin-bottom:3rem}
 .sec-badge{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--red);font-family:'Lato',sans-serif;display:block;margin-bottom:.6rem}
 .sec-title{font-family:'Cinzel',serif;font-size:26px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:var(--dark)}
 .sec-title-light{color:#f0ece4}
-
-/* MARBLE TEXTURES */
-.tex-branco-prime{background:linear-gradient(135deg,#f5f0ec 0%,#ede6df 25%,#f8f4f0 45%,#ddd6cc 60%,#f0ebe4 80%,#e8e0d8 100%)}
-.tex-carrara{background:linear-gradient(120deg,#f0eeec 0%,#e8e6e3 20%,#d8d5d0 35%,#ece9e5 55%,#d5d2ce 70%,#eeebe7 100%)}
-.tex-calacata{background:linear-gradient(110deg,#f8f6f3 0%,#ede9e4 18%,#c8c0b8 30%,#f4f0eb 48%,#b8b0a8 60%,#f0ece6 78%,#e0d8d0 100%)}
-.tex-travertino{background:linear-gradient(135deg,#d4c4a8 0%,#c8b898 18%,#ddd0b8 35%,#c0b090 50%,#d8c8b0 68%,#c4b49a 85%,#d0c0a0 100%)}
-.tex-branco-parana{background:linear-gradient(125deg,#f2eeea 0%,#e4ddd6 22%,#f6f2ee 40%,#d8d0c8 55%,#ede8e2 72%,#e0d8d0 100%)}
-.tex-marrom-imperador{background:linear-gradient(135deg,#3a2818 0%,#4a3020 18%,#2e1e10 32%,#5a3e28 48%,#3a2818 62%,#4e3422 80%,#2a1a0e 100%)}
-.tex-nero-marquina{background:linear-gradient(125deg,#0a0a0a 0%,#1a1a1a 20%,#f0f0f0 28%,#0e0e0e 32%,#e8e8e8 40%,#0a0a0a 46%,#1c1c1c 65%,#f5f5f5 72%,#0e0e0e 76%,#1a1a1a 100%)}
-.tex-crema-marfil{background:linear-gradient(130deg,#e8dcc8 0%,#ddd0b8 20%,#e4d8c4 38%,#d4c8b0 55%,#e0d4bc 72%,#ccc0a8 88%,#d8ccb4 100%)}
-.tex-bege-bahia{background:linear-gradient(135deg,#d4c4a0 0%,#c8b890 18%,#ddd0b4 34%,#bca888 50%,#d0c0a0 66%,#c4b494 82%,#ccbc9c 100%)}
-.tex-verde-guatemala{background:linear-gradient(120deg,#1a2e18 0%,#243820 18%,#0e2010 30%,#2e4428 44%,#1a2e18 58%,#0a1a08 72%,#20380e 86%,#1c3016 100%)}
-.tex-branco-siena{background:linear-gradient(135deg,#f4f0ea 0%,#ece6de 22%,#f8f4ee 40%,#e6e0d8 58%,#f2ece4 76%,#e4ddd5 100%)}
-.tex-onix{background:linear-gradient(125deg,#f5e8c0 0%,#e8c870 18%,#f0d890 32%,#c89840 48%,#e8c060 62%,#d4a840 76%,#f0d070 88%,#c89030 100%)}
-
-/* HERO SLIDES */
-.hero{position:relative;min-height:480px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem 2rem 4rem;overflow:hidden;background:linear-gradient(160deg,#1a1a1a 0%,#2e2e2e 40%,#1a1a1a 70%,#111 100%)}
-.hero-slides{width:100%;position:relative}
-.hslide{display:none;flex-direction:column;align-items:center;animation:fadeIn .6s ease}
-.hslide.active{display:flex}
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.slide-dots{display:flex;gap:8px;justify-content:center;margin-top:2rem;position:relative}
-.dot{width:8px;height:8px;border-radius:50%;background:#444;cursor:pointer;transition:background .2s}
-.dot.active{background:var(--red)}
-
-/* DIFF CARDS */
 .diff-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-.diff-card{padding:2.5rem 1.5rem;border-right:1px solid #2a2a2a;cursor:pointer;transition:background .2s}
+.diff-card{padding:2.5rem 1.5rem;border-right:1px solid #2a2a2a;cursor:pointer;transition:background .2s;background:var(--dark)}
 .diff-card:last-child{border-right:none}
 .diff-card:hover{background:#222}
 .diff-icon{color:var(--red);margin-bottom:1rem}
 .diff-card h3{font-family:'Cinzel',serif;font-size:13px;font-weight:400;letter-spacing:1px;color:#f0ece4;margin-bottom:.6rem}
 .diff-card p{font-size:12px;color:#777;font-family:'Lato',sans-serif;line-height:1.7}
 .diff-link{font-size:10px;color:var(--red);letter-spacing:1px;text-transform:uppercase;font-family:'Lato',sans-serif;font-weight:700;margin-top:.8rem;display:inline-block}
-
-/* SOBRE STATS */
 .sobre-stat-card{background:var(--bg);border:1px solid var(--border);border-top:3px solid var(--red);padding:1.5rem;text-align:center}
 .sobre-stat-n{font-family:'Cinzel',serif;font-size:28px;color:var(--red);margin-bottom:.3rem}
 .sobre-stat-l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);font-family:'Lato',sans-serif}
-
-/* DIFERENCIAIS */
 .dif-item{text-align:center;padding:1.5rem}
 .dif-icon-wrap{width:56px;height:56px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
 .dif-item h4{font-family:'Cinzel',serif;font-size:13px;font-weight:400;letter-spacing:1px;color:var(--dark);margin-bottom:.5rem}
 .dif-item p{font-size:12px;color:var(--stone);font-family:'Lato',sans-serif;line-height:1.7}
-
-/* INSPIRAÇÃO */
 .insp-pair{display:none}.insp-pair.active{display:block;animation:fadeIn .5s ease}
 .insp-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;height:440px}
-.insp-img-wrap{position:relative;overflow:hidden}
-.insp-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.insp-img-wrap{position:relative;overflow:hidden;background:#1a1a1a}
+.insp-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
 .insp-img-wrap:hover img{transform:scale(1.03)}
 .insp-label{position:absolute;bottom:0;left:0;right:0;padding:2rem 1rem .8rem;background:linear-gradient(transparent,rgba(0,0,0,.75));font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#f0ece4;font-family:'Lato',sans-serif}
 .insp-next-btn,.insp-prev-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(192,32,26,.85);border:none;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;transition:background .2s}
@@ -113,7 +75,7 @@ section{padding:4rem 2rem}
 .insp-next-btn:hover,.insp-prev-btn:hover{background:var(--red)}
 .insp-dot{width:8px;height:8px;border-radius:50%;background:#444;cursor:pointer;display:inline-block;transition:background .2s}
 .insp-dot.active{background:var(--red)}
-@media(max-width:600px){.insp-grid{grid-template-columns:1fr;height:auto}.insp-next-btn{right:-16px}.insp-prev-btn{left:-16px}}
+.galeria-section{background:var(--charcoal);padding:4rem 2rem}
 .galeria-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,140px);gap:3px;max-width:960px;margin:0 auto}
 .g-item{position:relative;overflow:hidden;cursor:pointer}
 .g-item:nth-child(1){grid-column:span 2;grid-row:span 2}
@@ -123,8 +85,18 @@ section{padding:4rem 2rem}
 .g-item:hover .g-ov{opacity:1}
 .g-ov-icon{width:44px;height:44px;border:2px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center}
 .g-label{position:absolute;bottom:0;left:0;right:0;padding:1.5rem 1rem .6rem;background:linear-gradient(transparent,rgba(0,0,0,.8));font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#f0ece4;font-family:'Lato',sans-serif}
-
-/* CATÁLOGO */
+.tex-branco-prime{background:linear-gradient(135deg,#f5f0ec,#ede6df,#f8f4f0,#ddd6cc,#f0ebe4,#e8e0d8)}
+.tex-carrara{background:linear-gradient(120deg,#f0eeec,#e8e6e3,#d8d5d0,#ece9e5,#d5d2ce,#eeebe7)}
+.tex-calacata{background:linear-gradient(110deg,#f8f6f3,#ede9e4,#c8c0b8,#f4f0eb,#b8b0a8,#f0ece6,#e0d8d0)}
+.tex-travertino{background:linear-gradient(135deg,#d4c4a8,#c8b898,#ddd0b8,#c0b090,#d8c8b0,#c4b49a,#d0c0a0)}
+.tex-branco-parana{background:linear-gradient(125deg,#f2eeea,#e4ddd6,#f6f2ee,#d8d0c8,#ede8e2,#e0d8d0)}
+.tex-marrom-imperador{background:linear-gradient(135deg,#3a2818,#4a3020,#2e1e10,#5a3e28,#3a2818,#4e3422,#2a1a0e)}
+.tex-nero-marquina{background:linear-gradient(125deg,#0a0a0a,#1a1a1a,#f0f0f0,#0e0e0e,#e8e8e8,#0a0a0a,#1c1c1c,#f5f5f5,#0e0e0e,#1a1a1a)}
+.tex-crema-marfil{background:linear-gradient(130deg,#e8dcc8,#ddd0b8,#e4d8c4,#d4c8b0,#e0d4bc,#ccc0a8,#d8ccb4)}
+.tex-bege-bahia{background:linear-gradient(135deg,#d4c4a0,#c8b890,#ddd0b4,#bca888,#d0c0a0,#c4b494,#ccbc9c)}
+.tex-verde-guatemala{background:linear-gradient(120deg,#1a2e18,#243820,#0e2010,#2e4428,#1a2e18,#0a1a08,#20380e,#1c3016)}
+.tex-branco-siena{background:linear-gradient(135deg,#f4f0ea,#ece6de,#f8f4ee,#e6e0d8,#f2ece4,#e4ddd5)}
+.tex-onix{background:linear-gradient(125deg,#f5e8c0,#e8c870,#f0d890,#c89840,#e8c060,#d4a840,#f0d070,#c89030)}
 .catalogo-section{background:var(--bg)}
 .filter-bar{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:2rem}
 .filter-btn{background:transparent;border:1px solid var(--border);padding:7px 18px;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'Lato',sans-serif;color:var(--stone);transition:all .2s}
@@ -139,8 +111,6 @@ section{padding:4rem 2rem}
 .cat-body h3{font-family:'Cinzel',serif;font-size:12px;font-weight:400;letter-spacing:1px;color:var(--dark);margin-bottom:4px}
 .cat-body p{font-size:11px;color:var(--stone-light);font-family:'Lato',sans-serif;line-height:1.5}
 .cat-body .ver-link{font-size:10px;color:var(--red);letter-spacing:1px;text-transform:uppercase;font-family:'Lato',sans-serif;margin-top:8px;display:inline-flex;align-items:center;gap:4px;font-weight:700}
-
-/* DETALHE */
 .detalhe-wrap{max-width:900px;margin:0 auto}
 .back-btn{background:none;border:none;color:var(--red);font-size:11px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:'Lato',sans-serif;font-weight:700;display:flex;align-items:center;gap:6px;margin-bottom:2.5rem}
 .det-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
@@ -153,8 +123,6 @@ section{padding:4rem 2rem}
 .det-features{list-style:none;margin-bottom:2rem}
 .det-features li{font-size:12px;color:var(--stone);font-family:'Lato',sans-serif;padding:7px 0;border-bottom:1px solid var(--bg3);display:flex;align-items:center;gap:10px}
 .det-feat-dot{width:6px;height:6px;background:var(--red);transform:rotate(45deg);flex-shrink:0}
-
-/* ORÇAMENTO */
 .orcamento-section{background:var(--bg2)}
 .orc-wrap{max-width:580px;margin:0 auto}
 .prod-banner{background:var(--dark);border-left:3px solid var(--red);padding:12px 16px;margin-bottom:1.5rem;display:flex;align-items:center;gap:10px}
@@ -174,8 +142,6 @@ section{padding:4rem 2rem}
 .check-circle svg{width:28px;height:28px;stroke:var(--red);fill:none;stroke-width:2}
 .success-box h3{font-family:'Cinzel',serif;font-size:20px;font-weight:400;letter-spacing:2px;text-transform:uppercase;margin-bottom:.5rem}
 .success-box p{font-size:13px;color:var(--stone);font-family:'Lato',sans-serif}
-
-/* SOBRE */
 .sobre-section{background:var(--white)}
 .sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:900px;margin:0 auto}
 .sobre-vis{background:var(--dark);height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;position:relative;overflow:hidden;border-top:3px solid var(--red)}
@@ -187,8 +153,6 @@ section{padding:4rem 2rem}
 .sobre-content p{font-size:13px;color:var(--stone);font-family:'Lato',sans-serif;line-height:1.9;margin-bottom:1rem}
 .stats-row{display:flex;gap:2rem;margin-top:1.5rem}
 .stat-n{font-family:'Cinzel',serif;font-size:22px;color:var(--red)}.stat-l{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--stone);font-family:'Lato',sans-serif}
-
-/* CONTATO */
 .contato-section{background:var(--bg)}
 .contato-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.5rem;max-width:800px;margin:0 auto}
 .contato-card{background:var(--white);border:1px solid var(--border);border-top:3px solid var(--red);padding:2rem 1rem;text-align:center}
@@ -196,8 +160,6 @@ section{padding:4rem 2rem}
 .cont-icon svg{width:20px;height:20px;stroke:var(--red);fill:none;stroke-width:1.5}
 .contato-card h3{font-family:'Cinzel',serif;font-size:11px;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:var(--dark);margin-bottom:.5rem}
 .contato-card p{font-size:12px;color:var(--stone);font-family:'Lato',sans-serif;line-height:1.7}
-
-/* FOOTER */
 footer{background:var(--dark2);padding:3rem 2rem 1.5rem;text-align:center;border-top:3px solid var(--red)}
 .foot-logo{font-family:'Cinzel',serif;font-size:20px;letter-spacing:4px;text-transform:uppercase;color:#fff;margin-bottom:.4rem}
 .foot-logo span{color:var(--red)}
@@ -208,26 +170,25 @@ footer{background:var(--dark2);padding:3rem 2rem 1.5rem;text-align:center;border
 .soc svg{width:15px;height:15px;stroke:#777;fill:none;stroke-width:1.5}
 .soc:hover svg{stroke:var(--red)}
 .foot-copy{font-size:11px;color:#333;border-top:1px solid #1f1f1f;padding-top:1.5rem;font-family:'Lato',sans-serif}
-
 @media(max-width:600px){
-  .sobre-grid,.det-grid{grid-template-columns:1fr}
+  .sobre-grid,.det-grid,.diff-grid{grid-template-columns:1fr}
+  .diff-card{border-right:none;border-bottom:1px solid #2a2a2a}
+  .insp-grid{grid-template-columns:1fr;height:auto}
   .form-grid{grid-template-columns:1fr}.fg.full{grid-column:span 1}
   .galeria-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
   .g-item:nth-child(1){grid-column:span 2;grid-row:span 1}
   .g-item:nth-child(5){grid-column:span 2}
   .hero-logo-big .top-word{font-size:40px}
   .nav-links{display:none}
+  .insp-next-btn{right:-16px}.insp-prev-btn{left:-16px}
 }
 </style>
+</head>
+<body>
 
 <nav>
   <div class="nav-logo" onclick="go('home')">
-    <div class="nav-logo-img">
-      <svg viewBox="0 0 44 44" width="44" height="44">
-        <text x="22" y="28" text-anchor="middle" font-family="Georgia,serif" font-size="18" font-weight="bold" fill="#fff">T<tspan fill="#c0201a">O</tspan>P</text>
-      </svg>
-    </div>
-    <div class="nav-logo-text">Top <span>Mármore</span></div>
+    <div class="nav-logo-text">T<span>O</span>P Mármore</div>
   </div>
   <ul class="nav-links">
     <li><a onclick="go('home')">Início</a></li>
@@ -241,10 +202,7 @@ footer{background:var(--dark2);padding:3rem 2rem 1.5rem;text-align:center;border
 
 <!-- HOME -->
 <div id="pg-home" class="page active">
-
-  <!-- HERO SLIDESHOW -->
-  <div class="hero" id="hero-slide">
-    <div class="hero-stone"></div>
+  <div class="hero">
     <div class="hero-lines"></div>
     <div class="hero-slides">
       <div class="hslide active">
@@ -278,44 +236,35 @@ footer{background:var(--dark2);padding:3rem 2rem 1.5rem;text-align:center;border
         <div><button class="btn-red" onclick="go('orcamento')">Solicitar orçamento</button><button class="btn-outline" onclick="go('sobre')">Sobre a empresa</button></div>
       </div>
     </div>
-    <div class="slide-dots" id="slide-dots">
+    <div class="slide-dots">
       <span class="dot active" onclick="goSlide(0)"></span>
       <span class="dot" onclick="goSlide(1)"></span>
       <span class="dot" onclick="goSlide(2)"></span>
     </div>
   </div>
 
-  <!-- CARDS DIFERENCIAIS -->
   <section style="background:var(--dark);padding:0">
     <div class="diff-grid">
       <div class="diff-card" onclick="go('catalogo')">
-        <div class="diff-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        </div>
+        <div class="diff-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
         <h3>Pedras Naturais</h3>
         <p>Mármores, granitos e pedras exóticas exclusivas para projetos únicos.</p>
         <span class="diff-link">Ver produtos →</span>
       </div>
       <div class="diff-card" onclick="go('catalogo')">
-        <div class="diff-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        </div>
+        <div class="diff-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
         <h3>Pedras Industrializadas</h3>
         <p>Fornecedores oficiais Silestone e Dekton. As melhores marcas do mercado.</p>
         <span class="diff-link">Ver produtos →</span>
       </div>
       <div class="diff-card" onclick="go('orcamento')">
-        <div class="diff-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        </div>
+        <div class="diff-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
         <h3>Orçamentos</h3>
         <p>Envie seu projeto e medidas. Encontraremos a pedra perfeita para você.</p>
         <span class="diff-link">Solicitar →</span>
       </div>
       <div class="diff-card" onclick="go('contato')">
-        <div class="diff-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-        </div>
+        <div class="diff-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
         <h3>Profissionais</h3>
         <p>Equipe especializada no atendimento de arquitetos e designers de interiores.</p>
         <span class="diff-link">Fale conosco →</span>
@@ -323,7 +272,6 @@ footer{background:var(--dark2);padding:3rem 2rem 1.5rem;text-align:center;border
     </div>
   </section>
 
-  <!-- SOBRE A EMPRESA -->
   <section style="background:var(--white);padding:5rem 2rem">
     <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
       <div>
@@ -345,92 +293,61 @@ footer{background:var(--dark2);padding:3rem 2rem 1.5rem;text-align:center;border
     </div>
   </section>
 
-  <!-- GALERIA DE INSPIRAÇÃO -->
+  <!-- FOTOS -->
   <section style="background:var(--dark);padding:5rem 2rem">
     <div class="sec-head">
       <span class="sec-badge" style="color:#c9a96e">Projetos inspiradores</span>
       <div class="sec-title sec-title-light">Transformações reais</div>
     </div>
-
     <div style="position:relative;max-width:960px;margin:0 auto">
-      <!-- Par 1: fotos 1 e 3 -->
       <div class="insp-pair active" id="insp-0">
         <div class="insp-grid">
           <div class="insp-img-wrap">
-            <img src="data:image/webp;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCADIAMgDASIAAhEBAxEB/8QAHAAAAgMBAQEBAAAAAAAAAAAABQYEBwMCAQAI/8QAShAAAQMDAgMFBQQGBwYHAAAAAQIDBAAFEQYSITFBBxNRYXGBkSIyobEUFiNCUmLBCBUkM3KCktEkQ1PC4fAlNDVFVWNkc6L/xAAaAQADAQEBAQAAAAAAAAAAAAABAgMEBQYA/8QAJREAAgICAgMBAQADAAAAAAAAAQIAERIhMQMiQVETMmFx/9oADAMBAAIRAxEAPwDzTSlKAlKUpAUpSlAKUpSgJSlKQFKUpQCuqUqxKUpQCupUqwKUpQCpUqwKUpQCpUq1AKVKlWoA1KlWoBSpUrUAapUq1AKVKlWoBSpUrUAapUq1AKVKlWoA1KlWoBSpUrUAapVqVaoA1KlWoBSpUrUAapVqVaoA1KlWoBSpUrUAapVqVaoA1KlWoBSpUrUAapVqVaoA1Ksp8OUpSgFKUpAUpSlAKUpSgFKUpAUpSlAKUpSgOqUpQCupUqwKUpQCpUq1AKVKlWoA1KlWoBSpUrUAapUq1AKVKlWoA1KlWoBSpUrUAapVqVaoA1KlWoBSpUrUAapVqVaoA1KlWoBSpUrUAapVqVaoA1KlWoBSpUrUAapVqVaoA1Ksp8OUpSgFKUpAUpSlAKUpSgFKUpAUpSlAKUpSgOqUpQCupUqwKUpQCpUq1AKVKlWoA1KlWoBSpUrUAapUq1AKVKlWoA1KlWoBSpUrUAapVqVaoA1KlWoBSpUrUAapVqVaoA1KlWoBSpUrUAapVqVaoA1KlWoBSpUrUAapVqVaoA1Ksp8OUpSgFKUpAUpSlAKUpSgFKUpAUpSlAKUpSgOqUpQCupUqwKUpQCpUq1AKVKlWoA1KlWoBSpUrUAapUq1AKVKlWoA1KlWoBSpUrUAapVqVaoA1KlWoBSpUrUAapVqVaoA1KlWoBSpUrUAapVqVaoA1KlWoBSpUrUAapVqVaoA1Ksp8OUpSgFKUpA" alt="Cozinha com mármore branco Calacata" style="width:100%;height:100%;object-fit:cover"/>
-            <div class="insp-label">Cozinha — Mármore Calacata</div>
+            <img src="foto3.jpg" alt="Cozinha com mármore branco"/>
+            <div class="insp-label">Cozinha — Mármore Branco</div>
           </div>
           <div class="insp-img-wrap">
-            <img src="data:image/jpeg;base64,FOTO3" alt="Banheiro com mármore verde Guatemala" style="width:100%;height:100%;object-fit:cover"/>
+            <img src="foto1.jpg" alt="Banheiro verde guatemala"/>
             <div class="insp-label">Banheiro — Verde Guatemala</div>
           </div>
         </div>
       </div>
-      <!-- Par 2: fotos 2 e 4 -->
       <div class="insp-pair" id="insp-1">
         <div class="insp-grid">
           <div class="insp-img-wrap">
-            <img src="data:image/jpeg;base64,FOTO2" alt="Cozinha com granito exótico" style="width:100%;height:100%;object-fit:cover"/>
+            <img src="foto2.jpg" alt="Cozinha granito exótico"/>
             <div class="insp-label">Cozinha — Granito Exótico</div>
           </div>
           <div class="insp-img-wrap">
-            <img src="data:image/jpeg;base64,FOTO4" alt="Banheiro com pedra exótica painel" style="width:100%;height:100%;object-fit:cover"/>
+            <img src="foto4.jpg" alt="Banheiro pedra exótica"/>
             <div class="insp-label">Banheiro — Pedra Exótica</div>
           </div>
         </div>
       </div>
-
-      <!-- Botão próximo -->
-      <button class="insp-next-btn" onclick="nextInspPair()" aria-label="Próxima sequência">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="24" height="24"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-      <button class="insp-prev-btn" onclick="prevInspPair()" aria-label="Sequência anterior">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="24" height="24"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-
-      <!-- Dots -->
+      <button class="insp-next-btn" onclick="nextInspPair()"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="24" height="24"><polyline points="9 18 15 12 9 6"/></svg></button>
+      <button class="insp-prev-btn" onclick="prevInspPair()"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="24" height="24"><polyline points="15 18 9 12 15 6"/></svg></button>
       <div style="display:flex;gap:8px;justify-content:center;margin-top:1.5rem">
         <span class="insp-dot active" onclick="goInsp(0)"></span>
         <span class="insp-dot" onclick="goInsp(1)"></span>
       </div>
     </div>
-
-    <!-- Texto inspiracional -->
     <div style="text-align:center;max-width:620px;margin:3rem auto 0">
       <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#f0ece4;line-height:1.7;margin-bottom:1rem">"Cada pedra carrega uma história única — veios formados ao longo de milhões de anos, esperando para transformar o seu espaço em obra de arte."</p>
-      <p style="font-family:'Lato',sans-serif;font-size:13px;color:#777;line-height:1.8;margin-bottom:2rem">Do projeto à instalação, a Top Mármore cuida de cada detalhe para que seu ambiente reflita elegância, sofisticação e personalidade. Não deixe seu projeto para depois — a pedra perfeita está esperando por você.</p>
+      <p style="font-family:'Lato',sans-serif;font-size:13px;color:#777;line-height:1.8;margin-bottom:2rem">Do projeto à instalação, a Top Mármore cuida de cada detalhe para que seu ambiente reflita elegância, sofisticação e personalidade.</p>
       <button class="btn-red" onclick="go('orcamento')">Quero transformar meu espaço</button>
     </div>
   </section>
 
-  <!-- DIFERENCIAIS DETALHADOS -->
   <section style="background:var(--bg);padding:5rem 2rem">
     <div class="sec-head"><span class="sec-badge">Por que escolher a Top Mármore</span><div class="sec-title">Nossos diferenciais</div></div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;max-width:960px;margin:0 auto">
-      <div class="dif-item">
-        <div class="dif-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-        <h4>Cortes Especiais</h4>
-        <p>Equipamentos de última geração para cada tipo de material, dando um toque único à sua obra.</p>
-      </div>
-      <div class="dif-item">
-        <div class="dif-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5" width="28" height="28"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-        <h4>Showroom</h4>
-        <p>Um espaço referência no Brasil onde clientes visualizam as diversas possibilidades em pedra.</p>
-      </div>
-      <div class="dif-item">
-        <div class="dif-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5" width="28" height="28"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h4>Montadores Treinados</h4>
-        <p>Equipe treinada para instalar e orientar o cliente da melhor maneira, com cortesia e bom trabalho.</p>
-      </div>
-      <div class="dif-item">
-        <div class="dif-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5" width="28" height="28"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-        <h4>Exclusividade</h4>
-        <p>Portfólio com produtos exclusivos que no Brasil você encontra só aqui, para obras verdadeiramente únicas.</p>
-      </div>
+      <div class="dif-item"><div class="dif-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><h4>Cortes Especiais</h4><p>Equipamentos de última geração para cada tipo de material, dando um toque único à sua obra.</p></div>
+      <div class="dif-item"><div class="dif-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5" width="28" height="28"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h4>Showroom</h4><p>Um espaço referência no Brasil onde clientes visualizam as diversas possibilidades em pedra.</p></div>
+      <div class="dif-item"><div class="dif-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5" width="28" height="28"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>Montadores Treinados</h4><p>Equipe treinada para instalar e orientar o cliente da melhor maneira, com cortesia e bom trabalho.</p></div>
+      <div class="dif-item"><div class="dif-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5" width="28" height="28"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h4>Exclusividade</h4><p>Portfólio com produtos exclusivos que no Brasil você encontra só aqui, para obras verdadeiramente únicas.</p></div>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
   <section style="background:var(--dark);padding:4rem 2rem;text-align:center;border-top:3px solid var(--red)">
     <span class="sec-badge">Pronto para começar?</span>
     <h2 style="font-family:'Cinzel',serif;font-size:26px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:#f0ece4;margin:1rem 0 1.5rem">Transforme seu projeto<br><span style="color:var(--red)">com a Top Mármore</span></h2>
@@ -440,7 +357,6 @@ footer{background:var(--dark2);padding:3rem 2rem 1.5rem;text-align:center;border
       <button class="btn-outline" onclick="window.open('https://wa.me/5592993590153','_blank')">WhatsApp</button>
     </div>
   </section>
-
 </div>
 
 <!-- CATÁLOGO -->
@@ -463,16 +379,9 @@ footer{background:var(--dark2);padding:3rem 2rem 1.5rem;text-align:center;border
 <div id="pg-detalhe" class="page">
   <section style="background:var(--bg);padding:3rem 2rem">
     <div class="detalhe-wrap">
-      <button class="back-btn" onclick="goBack()">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-        Voltar ao catálogo
-      </button>
+      <button class="back-btn" onclick="goBack()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>Voltar ao catálogo</button>
       <div class="det-grid">
-        <div>
-          <div class="det-img" id="det-img">
-            <div class="det-img-label" id="det-img-label"></div>
-          </div>
-        </div>
+        <div><div class="det-img" id="det-img"><div class="det-img-label" id="det-img-label"></div></div></div>
         <div>
           <span class="det-tag" id="det-tag"></span>
           <div class="det-name" id="det-name"></div>
@@ -498,9 +407,7 @@ footer{background:var(--dark2);padding:3rem 2rem 1.5rem;text-align:center;border
 <div id="pg-sobre" class="page">
   <section class="sobre-section">
     <div class="sobre-grid">
-      <div class="sobre-vis">
-        <div class="big-n">+20</div><div class="big-l">anos de excelência</div>
-      </div>
+      <div class="sobre-vis"><div class="big-n">+20</div><div class="big-l">anos de excelência</div></div>
       <div class="sobre-content">
         <h2>Sobre a <span>Top Mármore</span></h2>
         <p>Somos referência em pedras naturais e industrializadas, atendendo projetos residenciais e comerciais em todo o Brasil com eficiência, pontualidade e qualidade.</p>
@@ -548,7 +455,7 @@ footer{background:var(--dark2);padding:3rem 2rem 1.5rem;text-align:center;border
         <div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
         <h3>Solicitação enviada!</h3>
         <p>Entraremos em contato em breve.<br>Obrigado por escolher a Top Mármore.</p>
-        <button class="btn-outline" style="margin-top:1.5rem;color:var(--red);border-color:var(--red)" onclick="resetOrc()">Novo orçamento</button>
+        <button class="btn-red" style="margin-top:1.5rem" onclick="resetOrc()">Novo orçamento</button>
       </div>
     </div>
   </section>
@@ -580,18 +487,18 @@ footer{background:var(--dark2);padding:3rem 2rem 1.5rem;text-align:center;border
 
 <script>
 const MARMORES=[
-  {id:'branco-prime',nome:'Mármore Branco Prime',desc:'Branco sofisticado',preco:'R$ 900 a R$ 2.500',tag:'Natural • Premium',cat:['branco','premium'],tex:'tex-branco-prime',descLonga:'O Mármore Branco Prime é um dos mais sofisticados da categoria, com fundo branco puro e veios sutis que conferem elegância única. Ideal para bancadas de cozinha, banheiros e pisos de alto padrão.',features:['Fundo branco intenso','Veios delicados e refinados','Acabamento polido de alta brilhância','Ideal para ambientes internos','Disponível em chapas de grandes dimensões']},
-  {id:'carrara',nome:'Mármore Carrara',desc:'Branco com veios cinza',preco:'R$ 700 a R$ 2.200',tag:'Natural • Importado',cat:['branco'],tex:'tex-carrara',descLonga:'O Mármore Carrara é um dos mármores mais famosos do mundo, extraído das montanhas de Carrara, na Itália. Seu fundo branco acinzentado e veios cinza sutis o tornam um clássico atemporal da arquitetura.',features:['Origem italiana — Carrara, Toscana','Veios cinza naturais','Alta nobreza arquitetônica','Referência mundial em design','Excelente para esculturas e revestimentos']},
-  {id:'calacata',nome:'Mármore Calacata',desc:'Branco premium com veios marcantes',preco:'R$ 1.800 a R$ 6.000',tag:'Natural • Luxo',cat:['branco','premium'],tex:'tex-calacata',descLonga:'O Mármore Calacata é considerado um dos mais luxuosos do mundo. Com fundo branco e veios dourados ou cinza intensos e dramáticos, cada peça é uma obra de arte única extraída das pedreiras italianas.',features:['Veios dramáticos e marcantes','Fundo branco puro','Exclusividade em cada peça','Elevada valorização imobiliária','Extração nas pedreiras de Carrara, Itália']},
-  {id:'travertino',nome:'Mármore Travertino',desc:'Bege clássico',preco:'R$ 400 a R$ 1.500',tag:'Natural • Clássico',cat:['bege'],tex:'tex-travertino',descLonga:'O Travertino é uma pedra calcária de origem sedimentar com tonalidades cálidas em bege e marfim. Muito utilizado em revestimentos de paredes, pisos e fachadas, traz um charme rústico e sofisticado.',features:['Tonalidades quentes e aconchegantes','Textura porosa característica','Versátil para interno e externo','Fácil aplicação em grandes superfícies','Clássico da arquitetura mediterrânea']},
-  {id:'branco-parana',nome:'Mármore Branco Paraná',desc:'Branco nacional',preco:'R$ 800 a R$ 3.500',tag:'Natural • Nacional',cat:['branco'],tex:'tex-branco-parana',descLonga:'O Mármore Branco Paraná é extraído nas pedreiras do estado do Paraná e se destaca pela brancura e qualidade. Uma excelente alternativa nacional aos mármores importados, com ótimo custo-benefício.',features:['Extração nacional — Paraná/BR','Excelente custo-benefício','Brancura e luminosidade','Fácil disponibilidade','Ideal para projetos residenciais']},
-  {id:'marrom-imperador',nome:'Mármore Marrom Imperador',desc:'Marrom escuro elegante',preco:'R$ 1.200 a R$ 2.800',tag:'Natural • Premium',cat:['escuro','premium'],tex:'tex-marrom-imperador',descLonga:'O Mármore Marrom Imperador é uma pedra de origem espanhola com fundo marrom escuro e veios brancos e dourados que formam padrões dramáticos. Confere autoridade e sofisticação a qualquer ambiente.',features:['Origem espanhola','Veios brancos e dourados contrastantes','Alta densidade e resistência','Aspecto imponente e sofisticado','Excelente para banheiros de luxo']},
-  {id:'nero-marquina',nome:'Mármore Nero Marquina',desc:'Preto com veios brancos',preco:'R$ 1.500 a R$ 3.500',tag:'Natural • Importado',cat:['escuro','premium'],tex:'tex-nero-marquina',descLonga:'O Mármore Nero Marquina é extraído no País Basco, na Espanha. Seu preto profundo com veios brancos cria um contraste dramático e sofisticado, sendo muito utilizado em projetos de design contemporâneo e minimalista.',features:['Preto profundo e uniforme','Veios brancos contrastantes','Origem: País Basco, Espanha','Perfeito para design minimalista','Impacto visual imediato']},
-  {id:'crema-marfil',nome:'Mármore Crema Marfil',desc:'Bege importado',preco:'R$ 900 a R$ 2.000',tag:'Natural • Importado',cat:['bege'],tex:'tex-crema-marfil',descLonga:'O Mármore Crema Marfil é extraído em Alicante, Espanha, e é um dos mármores beges mais populares do mundo. Sua coloração cálida e veios discretos se harmonizam com praticamente qualquer estilo decorativo.',features:['Origem: Alicante, Espanha','Tons cálidos e atemporais','Veios suaves e discretos','Alta versatilidade decorativa','Amplamente usado em hotéis de luxo']},
-  {id:'bege-bahia',nome:'Mármore Bege Bahia',desc:'Bege nacional',preco:'R$ 300 a R$ 900',tag:'Natural • Nacional',cat:['bege'],tex:'tex-bege-bahia',descLonga:'O Mármore Bege Bahia é extraído no nordeste brasileiro e representa uma das melhores opções nacionais em termos de custo-benefício. Suas tonalidades quentes em bege e caramelo criam ambientes acolhedores.',features:['Extração nacional — Bahia/BR','Melhor custo-benefício da categoria','Tons quentes e acolhedores','Alta disponibilidade','Ideal para projetos de grande metragem']},
-  {id:'verde-guatemala',nome:'Mármore Verde Guatemala',desc:'Verde escuro luxuoso',preco:'R$ 2.000 a R$ 8.000',tag:'Natural • Raridade',cat:['colorido','premium'],tex:'tex-verde-guatemala',descLonga:'O Mármore Verde Guatemala é uma das pedras mais raras e luxuosas disponíveis. Originário da Guatemala, seu verde profundo com veios brancos e dourados cria ambientes de altíssimo impacto visual.',features:['Raridade mundial — origem Guatemala','Verde profundo único','Veios brancos e dourados exclusivos','Alta valorização em projetos','Peça de colecionador']},
-  {id:'branco-siena',nome:'Mármore Branco Siena',desc:'Branco nacional econômico',preco:'R$ 350 a R$ 800',tag:'Natural • Nacional',cat:['branco'],tex:'tex-branco-siena',descLonga:'O Mármore Branco Siena é uma pedra nacional de excelente qualidade e acessível, extraída em Minas Gerais. Ideal para projetos residenciais que buscam o charme do mármore branco com orçamento mais controlado.',features:['Extração nacional — Minas Gerais/BR','Ótimo custo-benefício','Brancura natural','Alta disponibilidade no mercado','Ideal para primeiros projetos em mármore']},
-  {id:'onix',nome:'Mármore Ônix',desc:'Translúcido decorativo',preco:'R$ 2.500 a R$ 10.000+',tag:'Natural • Ultra Premium',cat:['colorido','premium'],tex:'tex-onix',descLonga:'O Mármore Ônix é uma das pedras mais espetaculares da natureza. Com sua translucidez única, quando iluminado por trás cria efeitos de luz absolutamente deslumbrantes. Disponível em tons de mel, verde, azul e vermelho.',features:['Translucidez única — retroiluminação possível','Cada peça é absolutamente única','Disponível em múltiplas cores','Efeito visual deslumbrante','O cume do luxo em pedras naturais']}
+  {id:'branco-prime',nome:'Mármore Branco Prime',desc:'Branco sofisticado',preco:'R$ 900 a R$ 2.500',tag:'Natural • Premium',cat:['branco','premium'],tex:'tex-branco-prime',descLonga:'O Mármore Branco Prime é um dos mais sofisticados da categoria, com fundo branco puro e veios sutis que conferem elegância única.',features:['Fundo branco intenso','Veios delicados e refinados','Acabamento polido de alta brilhância','Ideal para ambientes internos','Disponível em chapas de grandes dimensões']},
+  {id:'carrara',nome:'Mármore Carrara',desc:'Branco com veios cinza',preco:'R$ 700 a R$ 2.200',tag:'Natural • Importado',cat:['branco'],tex:'tex-carrara',descLonga:'O Mármore Carrara é um dos mármores mais famosos do mundo, extraído das montanhas de Carrara, na Itália.',features:['Origem italiana — Carrara, Toscana','Veios cinza naturais','Alta nobreza arquitetônica','Referência mundial em design','Excelente para esculturas e revestimentos']},
+  {id:'calacata',nome:'Mármore Calacata',desc:'Branco premium com veios marcantes',preco:'R$ 1.800 a R$ 6.000',tag:'Natural • Luxo',cat:['branco','premium'],tex:'tex-calacata',descLonga:'O Mármore Calacata é considerado um dos mais luxuosos do mundo. Com fundo branco e veios dramáticos, cada peça é uma obra de arte.',features:['Veios dramáticos e marcantes','Fundo branco puro','Exclusividade em cada peça','Elevada valorização imobiliária','Extração nas pedreiras de Carrara, Itália']},
+  {id:'travertino',nome:'Mármore Travertino',desc:'Bege clássico',preco:'R$ 400 a R$ 1.500',tag:'Natural • Clássico',cat:['bege'],tex:'tex-travertino',descLonga:'O Travertino é uma pedra calcária de origem sedimentar com tonalidades cálidas em bege e marfim.',features:['Tonalidades quentes e aconchegantes','Textura porosa característica','Versátil para interno e externo','Fácil aplicação em grandes superfícies','Clássico da arquitetura mediterrânea']},
+  {id:'branco-parana',nome:'Mármore Branco Paraná',desc:'Branco nacional',preco:'R$ 800 a R$ 3.500',tag:'Natural • Nacional',cat:['branco'],tex:'tex-branco-parana',descLonga:'O Mármore Branco Paraná é extraído nas pedreiras do estado do Paraná e se destaca pela brancura e qualidade.',features:['Extração nacional — Paraná/BR','Excelente custo-benefício','Brancura e luminosidade','Fácil disponibilidade','Ideal para projetos residenciais']},
+  {id:'marrom-imperador',nome:'Mármore Marrom Imperador',desc:'Marrom escuro elegante',preco:'R$ 1.200 a R$ 2.800',tag:'Natural • Premium',cat:['escuro','premium'],tex:'tex-marrom-imperador',descLonga:'O Mármore Marrom Imperador é uma pedra de origem espanhola com fundo marrom escuro e veios brancos e dourados.',features:['Origem espanhola','Veios brancos e dourados contrastantes','Alta densidade e resistência','Aspecto imponente e sofisticado','Excelente para banheiros de luxo']},
+  {id:'nero-marquina',nome:'Mármore Nero Marquina',desc:'Preto com veios brancos',preco:'R$ 1.500 a R$ 3.500',tag:'Natural • Importado',cat:['escuro','premium'],tex:'tex-nero-marquina',descLonga:'O Mármore Nero Marquina é extraído no País Basco, na Espanha. Seu preto profundo com veios brancos cria um contraste dramático.',features:['Preto profundo e uniforme','Veios brancos contrastantes','Origem: País Basco, Espanha','Perfeito para design minimalista','Impacto visual imediato']},
+  {id:'crema-marfil',nome:'Mármore Crema Marfil',desc:'Bege importado',preco:'R$ 900 a R$ 2.000',tag:'Natural • Importado',cat:['bege'],tex:'tex-crema-marfil',descLonga:'O Mármore Crema Marfil é extraído em Alicante, Espanha, e é um dos mármores beges mais populares do mundo.',features:['Origem: Alicante, Espanha','Tons cálidos e atemporais','Veios suaves e discretos','Alta versatilidade decorativa','Amplamente usado em hotéis de luxo']},
+  {id:'bege-bahia',nome:'Mármore Bege Bahia',desc:'Bege nacional',preco:'R$ 300 a R$ 900',tag:'Natural • Nacional',cat:['bege'],tex:'tex-bege-bahia',descLonga:'O Mármore Bege Bahia é extraído no nordeste brasileiro e representa uma das melhores opções nacionais em termos de custo-benefício.',features:['Extração nacional — Bahia/BR','Melhor custo-benefício da categoria','Tons quentes e acolhedores','Alta disponibilidade','Ideal para projetos de grande metragem']},
+  {id:'verde-guatemala',nome:'Mármore Verde Guatemala',desc:'Verde escuro luxuoso',preco:'R$ 2.000 a R$ 8.000',tag:'Natural • Raridade',cat:['colorido','premium'],tex:'tex-verde-guatemala',descLonga:'O Mármore Verde Guatemala é uma das pedras mais raras e luxuosas disponíveis. Seu verde profundo cria ambientes de altíssimo impacto visual.',features:['Raridade mundial — origem Guatemala','Verde profundo único','Veios brancos e dourados exclusivos','Alta valorização em projetos','Peça de colecionador']},
+  {id:'branco-siena',nome:'Mármore Branco Siena',desc:'Branco nacional econômico',preco:'R$ 350 a R$ 800',tag:'Natural • Nacional',cat:['branco'],tex:'tex-branco-siena',descLonga:'O Mármore Branco Siena é uma pedra nacional de excelente qualidade e acessível, extraída em Minas Gerais.',features:['Extração nacional — Minas Gerais/BR','Ótimo custo-benefício','Brancura natural','Alta disponibilidade no mercado','Ideal para primeiros projetos em mármore']},
+  {id:'onix',nome:'Mármore Ônix',desc:'Translúcido decorativo',preco:'R$ 2.500 a R$ 10.000+',tag:'Natural • Ultra Premium',cat:['colorido','premium'],tex:'tex-onix',descLonga:'O Mármore Ônix é uma das pedras mais espetaculares da natureza. Com sua translucidez única, quando iluminado por trás cria efeitos deslumbrantes.',features:['Translucidez única — retroiluminação possível','Cada peça é absolutamente única','Disponível em múltiplas cores','Efeito visual deslumbrante','O cume do luxo em pedras naturais']}
 ];
 
 const GALERIA_ITEMS=[
@@ -607,39 +514,24 @@ const GALERIA_ITEMS=[
   {tex:'tex-crema-marfil',label:'Hall — Crema Marfil'},
 ];
 
-let prevPage='catalogo';
-let selectedProd=null;
+let prevPage='catalogo',selectedProd=null;
 
-function renderCard(m,onclick){
-  return`<div class="cat-card" onclick="${onclick}">
-    <div class="cat-img ${m.tex}">
-      <div class="cat-tag">${m.tag.split('•')[1]?.trim()||m.tag}</div>
-      <div class="cat-price-badge">${m.preco}</div>
-    </div>
-    <div class="cat-body">
-      <h3>${m.nome}</h3>
-      <p>${m.desc}</p>
-      <span class="ver-link">Ver detalhes →</span>
-    </div>
-  </div>`;
+function renderCard(m,oc){
+  return`<div class="cat-card" onclick="${oc}"><div class="cat-img ${m.tex}"><div class="cat-tag">${m.tag.split('•')[1]?.trim()||m.tag}</div><div class="cat-price-badge">${m.preco}</div></div><div class="cat-body"><h3>${m.nome}</h3><p>${m.desc}</p><span class="ver-link">Ver detalhes →</span></div></div>`;
 }
 
-function initHome(){}
-
-function renderCatalogo(filter){
-  const items=filter==='todos'?MARMORES:MARMORES.filter(m=>m.cat.includes(filter));
+function renderCatalogo(f){
+  const items=f==='todos'?MARMORES:MARMORES.filter(m=>m.cat.includes(f));
   document.getElementById('cat-grid').innerHTML=items.map(m=>renderCard(m,`openDet('${m.id}','catalogo')`)).join('');
 }
 
 function filterCat(f,btn){
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  renderCatalogo(f);
+  btn.classList.add('active');renderCatalogo(f);
 }
 
 function initGaleria(){
-  const g=document.getElementById('galeria-full');
-  if(!g)return;
+  const g=document.getElementById('galeria-full');if(!g)return;
   g.innerHTML=GALERIA_ITEMS.map((item,i)=>{
     const s=[0,4].includes(i)?'style="grid-column:span 2"':'';
     return`<div class="g-item" ${s}><div class="g-vis ${item.tex}"></div><div class="g-ov"><div class="g-ov-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div><div class="g-label">${item.label}</div></div>`;
@@ -656,8 +548,7 @@ function openDet(id,from){
   document.getElementById('det-price').textContent=m.preco+' / m²';
   document.getElementById('det-desc').textContent=m.descLonga;
   document.getElementById('det-feats').innerHTML=m.features.map(f=>`<li><div class="det-feat-dot"></div>${f}</li>`).join('');
-  selectedProd=m.nome;
-  go('detalhe');
+  selectedProd=m.nome;go('detalhe');
 }
 
 function goBack(){go(prevPage)}
@@ -701,7 +592,6 @@ function go(page){
   if(page==='galeria')initGaleria();
 }
 
-initHome();
 renderCatalogo('todos');
 
 let inspIdx=0;
@@ -725,3 +615,5 @@ function goSlide(n){
 }
 setInterval(()=>goSlide((slideIdx+1)%3),5000);
 </script>
+</body>
+</html>
